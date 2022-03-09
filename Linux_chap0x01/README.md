@@ -64,7 +64,6 @@
 
       - 查询一些解决方案
         1. 端口有问题，虽然没有说明到底为什么，但可以一试？  
-          https://www.cnblogs.com/chuyiwang/p/10729591.html
             ![changePort](changePort.png)
           结果：失败
         2. 也有说是因为防火墙没有关闭
