@@ -303,6 +303,10 @@ test.txt
   git add -A
   git commit -m [message]
   git push --set-upstream origin [newbranch] # 提交到远端的新分支
+  ```
+
+- 小小插曲：第一次push的时候卡了很久，就是访问不了，结果就单纯的我家断网了（气的想死啊 :rage:
+
 ---
 ### 问题总结与反思
 1. 网卡的设置（已在实验过程中列出解决方案）
