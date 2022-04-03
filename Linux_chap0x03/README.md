@@ -137,7 +137,7 @@
     `[oracle vm virtualbox docs](https://docs.oracle.com/en/virtualization/virtualbox/6.0/user/sharedfolders.html)
     ![autoMounting_solution](img/autoMounting_solution.png)
   - 关于为什么文件头前要加`sf`作为前缀，也还没弄明白
-- 关于==眼瞎手残==这件事儿
+- 关于**眼瞎手残**这件事儿
   - ![](img/error！.png)
   - ![](img/buserror.png)
   - ![](img/snapshot-yyds!.png)
