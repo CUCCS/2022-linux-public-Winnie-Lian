@@ -1,7 +1,7 @@
 #!/bin/env bash
 
 function help {
-    echo "process_image is a ____ that qcan batch image files in all support formats in the specified directory "
+    echo "process_image is a script that qcan batch image files in all support formats in the specified directory "
     echo "Usage:./process_image.sh [OPTITIONS]"
 
     echo "-r,--rename [path] -p,--prefix [text]\-s,--suffix [text]               Batch rename all the images in the specified directory "
@@ -63,19 +63,23 @@ function Compress_origin {
 
 function Add_watermark {
     path=${2}
-    directory_path=${2%/*}
-    full_name=${2##*/}
-    if [[ ! -d "${directory_path}/res/" ]]; then
-        mkdir $directory_path/res; fi
-    convert "$path" -pointsize 50 -fill gray -gravity southwest -draw "text 10,10 '${3}' " $directory_path/res/$full_name
+    for img in $(ls -r "${path}") ; do
+        echo $img
+        directory_path=${img%/*}
+        full_name=${img##*/}
+        if [[ ! -d "${directory_path}/res/" ]]; then
+            mkdir $directory_path/res; fi
+        convert "$img" -pointsize 50 -fill gray -gravity southwest -draw "text 10,10 '${3}' " $directory_path/res/$full_name
+    done
 
 }
 
 function transform {
+    path=${2}
     for img in in $(ls -r "${path}") ; do
-        path=${2}
-        img_type=${2##*.}
-        full_name=${2##*/}
+        echo $img
+        img_type=${img##*.}
+        full_name=${img}
         directory_path=${2%/*}
         if [[ ! -d "${directory_path}/res/" ]]; then
             mkdir $directory_path/res; fi
