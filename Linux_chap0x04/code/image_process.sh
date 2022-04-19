@@ -93,7 +93,7 @@ case ${1} in
     "-r") Rename "$@";;
     "--brename") Rename "$@";;
     "-c") Compress "$@";;
-    "-co") compress_origin "$@";; 
+    "-co") Compress_origin "$@";; 
     "-w") Add_watermark "$@";;
     "--watermark") Add_watermark "$@";;
     "-t") transform "$@"
