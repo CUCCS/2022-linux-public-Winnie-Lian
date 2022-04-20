@@ -4,16 +4,16 @@ language: bash
 #   - sudo apt-get update && apt-get install -y shellcheck
 
 script:
-  - echo "!!!!!!!!!!!!!!!!! image_process !!!!!!!!!!!!!!!!!!!!!!! "
-  - bash Linux_chap0x04/code/image_process.sh 
-  - bash Linux_chap0x04/code/image_process.sh -h
-  - bash Linux_chap0x04/code/image_process.sh -c Linux_chap0x04/code/task1_img/0.jpeg 
-  - bash Linux_chap0x04/code/image_process.sh -co Linux_chap0x04/code/task1_img/1.jpeg
-  - bash Linux_chap0x04/code/image_process.sh -r Linux_chap0x04/code/task1_img -p pre_
-  - bash Linux_chap0x04/code/image_process.sh -r Linux_chap0x04/code/task1_img -s _tail
+  # - echo "!!!!!!!!!!!!!!!!! image_process !!!!!!!!!!!!!!!!!!!!!!! "
+  # - bash Linux_chap0x04/code/image_process.sh 
+  # - bash Linux_chap0x04/code/image_process.sh -h
+  # - bash Linux_chap0x04/code/image_process.sh -c Linux_chap0x04/code/task1_img/0.jpeg 
+  # - bash Linux_chap0x04/code/image_process.sh -co Linux_chap0x04/code/task1_img/1.jpeg
+  # - bash Linux_chap0x04/code/image_process.sh -r Linux_chap0x04/code/task1_img -p pre_
+  # - bash Linux_chap0x04/code/image_process.sh -r Linux_chap0x04/code/task1_img -s _tail
 
-  - bash Linux_chap0x04/code/image_process.sh -w Linux_chap0x04/code/task1_img SECURITY
-  - bash Linux_chap0x04/code/image_process.sh -t Linux_chap0x04/code/task1_img
+  # - bash Linux_chap0x04/code/image_process.sh -w Linux_chap0x04/code/task1_img SECURITY
+  # - bash Linux_chap0x04/code/image_process.sh -t Linux_chap0x04/code/task1_img
 
   - echo "!!!!!!!!!!!!!!!!! data_anaylyze !!!!!!!!!!!!!!!!!!!!!!! "
   - bash Linux_chap0x04/code/data_analyze.sh 
