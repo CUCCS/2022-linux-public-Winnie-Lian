@@ -17,13 +17,19 @@ function help {
 function Rename {
     path=${2}
     for img in $(ls -r "${path}") ; do
-        echo $img
-        directory_path=${path%/*}
-        full_name=${path##*/}
+        # echo $img
+        directory_path="${path}"
+        # echo $directory_path
+        full_name=${img##*/}
+        # echo $full_name
         full_name=${full_name%.*}
-        img_type=${path##*.}
-        if [[ ${3} == "-p" ]];then mv "${img}" "${directory_path}/${4}_${full_name}.$img_type"; fi
-        if [[ ${3} == "-s" ]];then mv "${img}" "${directory_path}/${full_name}_${4}.$img_type"; fi
+        # echo $full_name
+        img_type=${img##*.}
+        # echo $img_type
+        if [[ $img_type == 'jpeg' || $img_type == 'png' || $img_type == 'svg' ]];then
+            if [[ ${3} == "-p" ]];then mv "${path}/${img}" "${directory_path}/${4}_${full_name}.$img_type"; fi
+            if [[ ${3} == "-s" ]];then mv "${path}/${img}" "${directory_path}/${full_name}_${4}.$img_type"; fi
+        fi
     done
          
 }
@@ -64,26 +70,27 @@ function Compress_origin {
 function Add_watermark {
     path=${2}
     for img in $(ls -r "${path}") ; do
-        echo $img
-        directory_path=${img%/*}
-        full_name=${img##*/}
-        if [[ ! -d "${directory_path}/res/" ]]; then
-            mkdir $directory_path/res; fi
-        convert "$img" -pointsize 50 -fill gray -gravity southwest -draw "text 10,10 '${3}' " $directory_path/res/$full_name
+        # echo $path
+        directory_path="${path}/res"
+        # echo $directory_path
+        full_name=${2}
+        # echo $full_name
+        if [[ ! -d "${path}/res/" ]]; then
+            mkdir $path/res; fi
+        convert "${path}/$img" -pointsize 50 -fill gray -gravity southwest -draw "text 10,10 '${3}'" "${directory_path}/$img"
     done
-
 }
 
 function transform {
     path=${2}
     for img in in $(ls -r "${path}") ; do
-        echo $img
+        # echo $img
         img_type=${img##*.}
-        full_name=${img}
-        directory_path=${2%/*}
-        if [[ ! -d "${directory_path}/res/" ]]; then
-            mkdir $directory_path/res; fi
-        if [[ $img_type == jpeg || $img_type == png || $img_type == svg ]];then mv "${img}" "${directory_path}/${full_name}.jpeg"; fi
+        full_name=${img%.*} 
+        # echo $full_name
+        if [[ ! -d "${path}/res/" ]]; then
+            mkdir $path/res; fi
+        if [[ $img_type == jpeg || $img_type == png || $img_type == svg ]];then mv "$path/${img}" "${path}/res/${full_name}.jpeg"; fi
     done
             
 }
