@@ -77,7 +77,7 @@ function Add_watermark {
         # echo $full_name
         if [[ ! -d "${path}/res/" ]]; then
             mkdir $path/res; fi
-        convert "${path}/$img" -pointsize 50 -fill gray -gravity southwest -draw "text 10,10 '${3}'" "${directory_path}/$img"
+        convert -debug "${path}/$img" -pointsize 50 -fill gray -gravity southwest -draw "text 10,10 '${3}'" "${directory_path}/$img"
     done
 }
 
