@@ -1,7 +1,7 @@
 language: bash
 
 before_install:
-  - sudo apt-get update && apt-get install -y shellcheck
+  # - sudo apt-get update && apt-get install -y shellcheck
 
 script:
   - echo "!!!!!!!!!!!!!!!!! image_process !!!!!!!!!!!!!!!!!!!!!!! "
