@@ -730,3 +730,582 @@ View the recording at:
 winnie@winnie:~$
 
 ```
+
+# Travis
+```bash
+Worker information
+0.13s0.01s0.00s0.01s
+system_info
+Build system information
+0.00s3.54s0.00s3.67s
+docker_mtu_and_registry_mirrors
+resolvconf
+git.checkout
+0.80s$ git clone --depth=50 --branch=chap0x04 https://github.com/CUCCS/2022-linux-public-Winnie-Lian.git CUCCS/2022-linux-public-Winnie-Lian
+0.01s$ bash -c 'echo $BASH_VERSION'
+4.3.48(1)-release
+before_install.1
+6.63s$ sudo apt-get update && sudo apt install shellcheck
+before_install.2
+0.61s$ sudo apt install imagemagick
+before_install.3
+3.42s$ sudo apt install p7zip-full
+before_install.4
+0.00s$ ls -l
+0.00s$ echo "!!!!!!!!!!!!!!!!! image_process !!!!!!!!!!!!!!!!!!!!!!! "
+!!!!!!!!!!!!!!!!! image_process !!!!!!!!!!!!!!!!!!!!!!! 
+The command "echo "!!!!!!!!!!!!!!!!! image_process !!!!!!!!!!!!!!!!!!!!!!! "" exited with 0.
+0.00s$ bash Linux_chap0x04/code/image_process.sh
+process_image is a script that qcan batch image files in all support formats in the specified directory 
+Usage:./process_image.sh [OPTITIONS]
+-r,--rename [path] -p,--prefix [text]\-s,--suffix [text]               Batch rename all the images in the specified directory 
+-c,--compress [path]                                                   Compress the image
+-co [path]                                                             Compress the image with the original height:width
+-w,--watermark [path] [text of watermark]                              Add a custom text watermark to the picture batch
+-t,--transform [path]                                                  Transform image into JPEG
+-h,--help                                                              Display this help page
+======================= the output will be in the '.\res\' directory in default ================================
+The command "bash Linux_chap0x04/code/image_process.sh" exited with 0.
+0.00s$ bash Linux_chap0x04/code/image_process.sh -h
+The command "bash Linux_chap0x04/code/image_process.sh -h" exited with 0.
+0.12s$ bash Linux_chap0x04/code/image_process.sh -c Linux_chap0x04/code/task1_img/0.jpeg
+The command "bash Linux_chap0x04/code/image_process.sh -c Linux_chap0x04/code/task1_img/0.jpeg" exited with 0.
+0.05s$ bash Linux_chap0x04/code/image_process.sh -co Linux_chap0x04/code/task1_img/1.jpeg
+The command "bash Linux_chap0x04/code/image_process.sh -co Linux_chap0x04/code/task1_img/1.jpeg" exited with 0.
+0.02s$ bash Linux_chap0x04/code/image_process.sh -r Linux_chap0x04/code/task1_img -p pre_
+The command "bash Linux_chap0x04/code/image_process.sh -r Linux_chap0x04/code/task1_img -p pre_" exited with 0.
+0.02s$ bash Linux_chap0x04/code/image_process.sh -r Linux_chap0x04/code/task1_img -s _tail
+The command "bash Linux_chap0x04/code/image_process.sh -r Linux_chap0x04/code/task1_img -s _tail" exited with 0.
+0.02s$ bash Linux_chap0x04/code/image_process.sh -t Linux_chap0x04/code/task1_img
+The command "bash Linux_chap0x04/code/image_process.sh -t Linux_chap0x04/code/task1_img" exited with 0.
+0.00s$ echo "!!!!!!!!!!!!!!!!! data_anaylyze !!!!!!!!!!!!!!!!!!!!!!! "
+!!!!!!!!!!!!!!!!! data_anaylyze !!!!!!!!!!!!!!!!!!!!!!! 
+The command "echo "!!!!!!!!!!!!!!!!! data_anaylyze !!!!!!!!!!!!!!!!!!!!!!! "" exited with 0.
+0.13s$ bash Linux_chap0x04/code/data_analyze.sh
+--2022-04-22 10:56:29--  https://c4pr1c3.github.io/LinuxSysAdmin/exp/chap0x04/worldcupplayerinfo.tsv
+Resolving c4pr1c3.github.io (c4pr1c3.github.io)... 185.199.108.153, 185.199.109.153, 185.199.110.153, ...
+Connecting to c4pr1c3.github.io (c4pr1c3.github.io)|185.199.108.153|:443... connected.
+HTTP request sent, awaiting response... 200 OK
+Length: 46955 (46K) [text/tab-separated-values]
+Saving to: ‘worldcupplayerinfo.tsv’
+worldcupplayerinfo. 100%[===================>]  45.85K  --.-KB/s    in 0.01s   
+2022-04-22 10:56:29 (4.54 MB/s) - ‘worldcupplayerinfo.tsv’ saved [46955/46955]
+data analyze is a script that tackle with the information of the athletes in 2014 World Cup 
+Usage:./data_analyze.sh [OPTITIONS]
+-a [[low:high]](eg. [0:20] refers to under 20 years)          give the number and percentage of the range
+-p [positon]                                                  give the number and percentage of the specific position
+-l                                                            give the longest name
+-s                                                            give the shortest name
+-e                                                            give the eldest athlete
+-y                                                            give the yongest athlete
+The command "bash Linux_chap0x04/code/data_analyze.sh" exited with 0.
+0.01s$ bash Linux_chap0x04/code/data_analyze.sh -a [20:30]
+================= age_range called ===================
+the number of the athletes whose age is between 20 and 30.000000 is 600
+the percentage of the group is 81.41%
+================= age_range end ===================
+The command "bash Linux_chap0x04/code/data_analyze.sh -a [20:30]" exited with 0.
+0.01s$ bash Linux_chap0x04/code/data_analyze.sh -a [40:50]
+================= age_range called ===================
+the number of the athletes whose age is between 40 and 50.000000 is 1
+the percentage of the group is 0.14%
+================= age_range end ===================
+The command "bash Linux_chap0x04/code/data_analyze.sh -a [40:50]" exited with 0.
+0.01s$ bash Linux_chap0x04/code/data_analyze.sh -p Defender
+****************** get_postion called ****************** 
+the number of the athletes whose position is Defender is 236
+the percentage of the group is 32.02%
+ ****************** get_postion end ****************** 
+The command "bash Linux_chap0x04/code/data_analyze.sh -p Defender" exited with 0.
+0.01s$ bash Linux_chap0x04/code/data_analyze.sh -l
+------------------- longest_name called ------------------- 
+Since the awk takes the unicode as auto, the string length is orderedby the character.
+the longest name of character is Francisco Javier Rodriguez
+ ------------------- longest_name end ------------------- 
+The command "bash Linux_chap0x04/code/data_analyze.sh -l" exited with 0.
+0.01s$ bash Linux_chap0x04/code/data_analyze.sh -s
+------------------- shortest_name called ------------------- 
+Since the awk takes the unicode as auto, the string length is orderedby the character.
+the longest name of character is Jô
+ ------------------- longest_name end ------------------- 
+The command "bash Linux_chap0x04/code/data_analyze.sh -s" exited with 0.
+0.01s$ bash Linux_chap0x04/code/data_analyze.sh -e
+#################### find_eldest called ####################
+the eldest player is 0-year-old Player
+#################### find_eldest end ####################
+The command "bash Linux_chap0x04/code/data_analyze.sh -e" exited with 0.
+0.01s$ bash Linux_chap0x04/code/data_analyze.sh -y
+#################### find_yongest called ####################
+the yongest player is 18-year-old Fabrice Olinga
+#################### find_yongest end ####################
+The command "bash Linux_chap0x04/code/data_analyze.sh -y" exited with 0.
+0.00s$ echo "!!!!!!!!!!!!!!!!! log_process !!!!!!!!!!!!!!!!!!!!!!! "
+!!!!!!!!!!!!!!!!! log_process !!!!!!!!!!!!!!!!!!!!!!! 
+The command "echo "!!!!!!!!!!!!!!!!! log_process !!!!!!!!!!!!!!!!!!!!!!! "" exited with 0.
+1.19s$ bash Linux_chap0x04/code/log_process.sh
+--2022-04-22 10:56:29--  https://c4pr1c3.github.io/LinuxSysAdmin/exp/chap0x04/web_log.tsv.7z
+Resolving c4pr1c3.github.io (c4pr1c3.github.io)... 185.199.108.153, 185.199.109.153, 185.199.110.153, ...
+Connecting to c4pr1c3.github.io (c4pr1c3.github.io)|185.199.108.153|:443... connected.
+HTTP request sent, awaiting response... 200 OK
+Length: 11760144 (11M) [application/x-7z-compressed]
+Saving to: ‘web_log.tsv.7z’
+web_log.tsv.7z      100%[===================>]  11.21M  --.-KB/s    in 0.1s    
+2022-04-22 10:56:29 (100 MB/s) - ‘web_log.tsv.7z’ saved [11760144/11760144]
+7-Zip [64] 9.20  Copyright (c) 1999-2010 Igor Pavlov  2010-11-18
+p7zip Version 9.20 (locale=en_US.UTF-8,Utf16=on,HugeFiles=on,2 CPUs)
+Processing archive: web_log.tsv.7z
+Extracting  web_log.tsv
+Everything is Ok
+Size:       120704766
+Compressed: 11760144
+log_process is a script that tackle with the logs 
+Usage:./log_process.sh [OPTITIONS]
+-a                                                            get the TOP100 host and the times
+-p                                                            get the TOP100 IP and the times
+-l                                                            get the TOP100 url and the times
+-s                                                            get the code and the times
+-y                                                            get the 4xx code and.....
+-e [url]                                                      get the TOP100 host of the specific url 
+The command "bash Linux_chap0x04/code/log_process.sh" exited with 0.
+1.13s$ bash Linux_chap0x04/code/log_process.sh -a
+统计访问来源主机TOP 100和分别对应出现的总次数
+6530	edams.ksc.nasa.gov
+4846	piweba4y.prodigy.com
+4791	163.206.89.4
+4607	piweba5y.prodigy.com
+4416	piweba3y.prodigy.com
+3889	www-d1.proxy.aol.com
+3534	www-b2.proxy.aol.com
+3463	www-b3.proxy.aol.com
+3423	www-c5.proxy.aol.com
+3411	www-b5.proxy.aol.com
+3407	www-c2.proxy.aol.com
+3404	www-d2.proxy.aol.com
+3337	www-a2.proxy.aol.com
+3298	news.ti.com
+3296	www-d3.proxy.aol.com
+3293	www-b4.proxy.aol.com
+3272	www-c3.proxy.aol.com
+3234	www-d4.proxy.aol.com
+3177	www-c1.proxy.aol.com
+3134	www-c4.proxy.aol.com
+3123	intgate.raleigh.ibm.com
+3088	www-c6.proxy.aol.com
+3041	www-a1.proxy.aol.com
+3011	mpngate1.ny.us.ibm.net
+2983	e659229.boeing.com
+2957	piweba1y.prodigy.com
+2906	webgate1.mot.com
+2761	www-relay.pa-x.dec.com
+2318	beta.xerox.com
+2311	poppy.hensa.ac.uk
+2237	vagrant.vf.mmc.com
+1910	palona1.cns.hp.com
+1793	www-proxy.crl.research.digital.com
+1762	koriel.sun.com
+1681	derec
+1637	trusty.lmsc.lockheed.com
+1623	gw2.att.com
+1563	cliffy.lfwc.lockheed.com
+1503	inet2.tek.com
+1485	disarray.demon.co.uk
+1467	gw1.att.com
+1435	128.217.62.1
+1395	interlock.turner.com
+1360	163.205.1.19
+1354	sgigate.sgi.com
+1336	bocagate.bocaraton.ibm.com
+1324	piweba2y.prodigy.com
+1311	gw3.att.com
+1310	keyhole.es.dupont.com
+1297	n1144637.ksc.nasa.gov
+1292	163.205.3.104
+1256	163.205.156.16
+1252	163.205.19.20
+1216	erigate.ericsson.se
+1211	gn2.getnet.com
+1089	gwa.ericsson.com
+1079	tiber.gsfc.nasa.gov
+1054	128.217.62.2
+1017	bstfirewall.bst.bls.com
+1015	163.206.137.21
+1013	spider.tbe.com
+1010	gatekeeper.us.oracle.com
+995	www-c8.proxy.aol.com
+984	whopkins.sso.az.honeywell.com
+966	news.dfrc.nasa.gov
+949	128.159.122.110
+940	proxy0.research.att.com
+925	proxy.austin.ibm.com
+902	www-c9.proxy.aol.com
+901	bbuig150.unisys.com
+899	corpgate.nt.com
+890	sahp315.sandia.gov
+869	amdext.amd.com
+848	128.159.132.56
+830	n1121796.ksc.nasa.gov
+825	igate.uswest.com
+819	gatekeeper.cca.rockwell.com
+815	wwwproxy.sanders.com
+814	gw4.att.com
+812	goose.sms.fi
+808	128.159.144.83
+805	jericho3.microsoft.com
+798	128.159.111.141
+786	jericho2.microsoft.com
+782	sdn_b6_f02_ip.dny.rockwell.com
+778	lamar.d48.lilly.com
+776	163.205.11.31
+772	heimdallp2.compaq.com
+771	stortek1.stortek.com
+762	163.205.16.75
+759	mac998.kip.apple.com
+742	tia1.eskimo.com
+733	www-e1f.gnn.com
+718	www-b1.proxy.aol.com
+715	reddragon.ksc.nasa.gov
+711	128.159.122.137
+701	rmcg.cts.com
+701	bambi.te.rl.ac.uk
+697	electron.mcc.com
+691	163.205.23.76
+============= end ===================
+The command "bash Linux_chap0x04/code/log_process.sh -a" exited with 0.
+1.95s$ bash Linux_chap0x04/code/log_process.sh -p
+统计访问来源主机TOP 100 IP和分别对应出现的总次数
+4791	163.206.89.4
+1435	128.217.62.1
+1360	163.205.1.19
+1292	163.205.3.104
+1256	163.205.156.16
+1252	163.205.19.20
+1054	128.217.62.2
+1015	163.206.137.21
+949	128.159.122.110
+848	128.159.132.56
+808	128.159.144.83
+798	128.159.111.141
+776	163.205.11.31
+762	163.205.16.75
+711	128.159.122.137
+691	163.205.23.76
+672	206.27.25.1
+647	198.83.19.44
+641	199.1.50.225
+624	163.205.23.93
+610	139.169.174.102
+600	163.205.121.3
+598	140.229.116.37
+591	141.102.82.127
+586	163.206.140.4
+573	163.206.104.34
+567	204.62.245.32
+565	128.159.122.38
+563	128.217.62.224
+563	128.159.122.107
+553	128.159.122.180
+549	128.159.123.58
+544	163.205.154.11
+532	192.112.22.119
+518	163.205.16.100
+503	199.201.186.103
+503	128.159.146.40
+494	128.159.122.160
+486	192.77.40.4
+482	193.143.192.106
+480	152.163.192.5
+478	163.205.23.71
+475	139.169.30.50
+469	128.159.122.144
+466	163.234.140.22
+463	163.205.150.22
+457	128.217.61.184
+451	163.205.23.72
+448	198.83.19.40
+446	128.159.122.14
+443	199.201.186.104
+443	198.83.19.47
+443	128.217.61.15
+441	128.159.121.34
+438	128.159.121.41
+435	160.205.119.27
+432	163.205.154.17
+432	152.163.192.38
+432	128.159.122.15
+423	128.159.135.73
+423	128.159.135.38
+421	152.163.192.35
+415	128.159.76.128
+413	152.163.192.71
+412	128.159.63.159
+409	163.205.12.100
+404	133.53.64.33
+402	152.163.192.70
+397	128.159.121.64
+396	129.239.68.160
+391	152.163.192.36
+389	163.205.16.90
+389	128.32.196.94
+385	163.205.1.18
+384	163.206.136.1
+383	147.147.191.43
+374	163.205.16.104
+374	152.163.192.69
+373	193.178.53.180
+371	128.217.63.27
+367	130.110.74.81
+366	204.69.0.27
+365	163.206.130.46
+359	152.163.192.67
+357	163.205.54.76
+356	152.163.192.7
+354	198.83.19.43
+350	128.159.137.43
+348	147.74.110.61
+345	163.205.23.44
+343	128.159.168.162
+336	158.27.59.88
+336	152.163.192.3
+335	163.205.166.15
+335	128.159.145.21
+332	163.205.2.180
+329	128.217.61.98
+328	152.163.192.66
+324	163.205.3.38
+324	163.205.2.35
+============= end ===================
+The command "bash Linux_chap0x04/code/log_process.sh -p" exited with 0.
+2.34s$ bash Linux_chap0x04/code/log_process.sh -l
+统计最频繁被访问的URL TOP 100
+97410	/images/NASA-logosmall.gif
+75337	/images/KSC-logosmall.gif
+67448	/images/MOSAIC-logosmall.gif
+67068	/images/USA-logosmall.gif
+66444	/images/WORLD-logosmall.gif
+62778	/images/ksclogo-medium.gif
+43687	/ksc.html
+37826	/history/apollo/images/apollo-logo1.gif
+35138	/images/launch-logo.gif
+30346	/
+27810	/images/ksclogosmall.gif
+24606	/shuttle/missions/sts-69/mission-sts-69.html
+24461	/shuttle/countdown/
+24383	/shuttle/missions/sts-69/count69.gif
+23405	/shuttle/missions/sts-69/sts-69-patch-small.gif
+22453	/shuttle/missions/missions.html
+19877	/images/launchmedium.gif
+17247	/htbin/cdt_main.pl
+12160	/shuttle/countdown/images/countclock.gif
+12137	/icons/menu.xbm
+12057	/icons/blank.xbm
+10345	/software/winvn/winvn.html
+10308	/icons/image.xbm
+10134	/history/history.html
+10126	/history/apollo/images/footprint-logo.gif
+9439	/history/apollo/images/apollo-small.gif
+9230	/history/apollo/images/footprint-small.gif
+9037	/software/winvn/winvn.gif
+8985	/history/apollo/apollo.html
+8662	/software/winvn/wvsmall.gif
+8610	/software/winvn/bluemarb.gif
+8583	/htbin/cdt_clock.pl
+7865	/shuttle/countdown/liftoff.html
+7389	/shuttle/resources/orbiters/orbiters-logo.gif
+7261	/images/shuttle-patch-logo.gif
+7177	/history/apollo/apollo-13/apollo-13.html
+7040	/images/
+7029	/shuttle/countdown/video/livevideo2.gif
+6615	/images/kscmap-tiny.gif
+6517	/shuttle/technology/sts-newsref/stsref-toc.html
+6309	/history/apollo/apollo-13/apollo-13-patch-small.gif
+5613	/shuttle/missions/sts-71/sts-71-patch-small.gif
+5264	/shuttle/missions/sts-69/images/images.html
+5248	/icons/text.xbm
+5093	/images/construct.gif
+4869	/images/shuttle-patch-small.gif
+4846	/shuttle/missions/sts-69/movies/movies.html
+4791	/shuttle/missions/sts-70/sts-70-patch-small.gif
+4785	/icons/unknown.xbm
+4559	/shuttle/missions/sts-69/liftoff.html
+4464	/facilities/lc39a.html
+4434	/shuttle/resources/orbiters/endeavour.html
+4365	/history/apollo/images/apollo-logo.gif
+4066	/shuttle/missions/sts-70/mission-sts-70.html
+4024	/images/lc39a-logo.gif
+3817	/shuttle/resources/orbiters/endeavour-logo.gif
+3706	/shuttle/technology/sts-newsref/sts_asm.html
+3518	/shuttle/countdown/countdown.html
+3507	/shuttle/missions/sts-71/movies/movies.html
+3377	/shuttle/countdown/video/livevideo.jpeg
+3140	/history/apollo/apollo-11/apollo-11.html
+3130	/shuttle/missions/sts-71/mission-sts-71.html
+3087	/shuttle/missions/sts-70/images/images.html
+2945	/shuttle/missions/sts-71/images/images.html
+2939	/shuttle/missions/sts-73/mission-sts-73.html
+2865	/images/faq.gif
+2864	/shuttle/technology/images/srb_mod_compare_1-small.gif
+2818	/shuttle/technology/images/srb_mod_compare_3-small.gif
+2715	/shuttle/technology/images/srb_mod_compare_6-small.gif
+2701	/history/apollo/apollo-11/apollo-11-patch-small.gif
+2586	/elv/elvpage.htm
+2544	/shuttle/missions/sts-73/sts-73-patch-small.gif
+2385	/shuttle/countdown/video/sts-69-prelaunch-pad.gif
+2343	/shuttle/missions/51-l/mission-51-l.html
+2293	/images/launch-small.gif
+2256	/facilities/tour.html
+2201	/shuttle/missions/51-l/51-l-patch-small.gif
+2172	/images/kscmap-small.gif
+2171	/shuttle/resources/orbiters/challenger.html
+2159	/shuttle/missions/sts-71/movies/sts-71-launch.mpg
+2146	/shuttle/technology/sts-newsref/sts-lcc.html
+2133	/htbin/wais.pl
+2120	/facts/about_ksc.html
+2107	/history/mercury/mercury.html
+2040	/images/mercury-logo.gif
+1991	/elv/elvhead3.gif
+1979	/images/launchpalms-small.gif
+1936	/images/whatsnew.gif
+1929	/history/apollo/apollo-spacecraft.txt
+1915	/facilities/vab.html
+1912	/shuttle/resources/orbiters/columbia.html
+1908	/shuttle/countdown/lps/fr.html
+1904	/shuttle/resources/orbiters/challenger-logo.gif
+1892	/images/ksclogo.gif
+1891	/whats-new.html
+1874	/elv/endball.gif
+1869	/history/apollo/apollo-13/apollo-13-info.html
+1868	/shuttle/missions/sts-74/mission-sts-74.html
+1845	/elv/PEGASUS/minpeg1.gif
+1835	/elv/SCOUT/scout.gif
+============= end ===================
+The command "bash Linux_chap0x04/code/log_process.sh -l" exited with 0.
+2.62s$ bash Linux_chap0x04/code/log_process.sh -s
+统计不同响应状态码的出现次数和对应百分比
+1398987	200	89.1139%
+134146	304	8.5449%
+26497	302	1.6878%
+10055	404	0.6405%
+171	403	0.0109%
+27	501	0.0017%
+3	500	0.0002%
+The command "bash Linux_chap0x04/code/log_process.sh -s" exited with 0.
+2.31s$ bash Linux_chap0x04/code/log_process.sh -y
+分别统计不同4XX状态码对应的TOP 10 URL和对应出现的总次数
+404	1337	/pub/winvn/readme.txt	
+404	1185	/pub/winvn/release.txt	
+404	683	/shuttle/missions/STS-69/mission-STS-69.html	
+404	319	/images/nasa-logo.gif	
+404	253	/shuttle/missions/sts-68/ksc-upclose.gif	
+404	209	/elv/DELTA/uncons.htm	
+404	200	/history/apollo/sa-1/sa-1-patch-small.gif	
+404	166	/://spacelink.msfc.nasa.gov	
+404	160	/images/crawlerway-logo.gif	
+404	154	/history/apollo/a-001/a-001-patch-small.gif	
+The command "bash Linux_chap0x04/code/log_process.sh -y" exited with 0.
+2.33s$ bash Linux_chap0x04/code/log_process.sh -e /images/MOSAIC-logosmall.gif
+给定URL输出TOP 100访问来源主机
+867	edams.ksc.nasa.gov	
+233	163.206.89.4	
+214	n1144637.ksc.nasa.gov	
+204	163.205.19.20	
+203	128.217.62.1	
+166	163.205.3.104	
+136	n1121796.ksc.nasa.gov	
+134	www-b3.proxy.aol.com	
+133	www-b2.proxy.aol.com	
+128	www-b4.proxy.aol.com	
+125	www-d3.proxy.aol.com	
+122	163.205.11.31	
+120	piweba4y.prodigy.com	
+120	mpngate1.ny.us.ibm.net	
+119	piweba5y.prodigy.com	
+117	www-d1.proxy.aol.com	
+116	www-b5.proxy.aol.com	
+115	piweba3y.prodigy.com	
+113	www-d4.proxy.aol.com	
+112	www-c5.proxy.aol.com	
+112	www-c2.proxy.aol.com	
+111	www-c1.proxy.aol.com	
+111	www-a1.proxy.aol.com	
+111	163.205.23.76	
+110	www-d2.proxy.aol.com	
+110	128.159.144.83	
+109	www-c6.proxy.aol.com	
+109	www-c4.proxy.aol.com	
+108	www-c3.proxy.aol.com	
+107	n1131455.ksc.nasa.gov	
+106	n1376232.ksc.nasa.gov	
+106	n1040681.ksc.nasa.gov	
+106	128.217.62.2	
+105	163.205.16.75	
+104	n1123413.ksc.nasa.gov	
+104	163.205.23.93	
+102	www-a2.proxy.aol.com	
+101	n1123543.ksc.nasa.gov	
+99	163.205.121.3	
+93	webgate1.mot.com	
+92	intgate.raleigh.ibm.com	
+91	128.159.132.56	
+89	derec	
+88	n1144796.ksc.nasa.gov	
+88	163.206.104.34	
+87	poppy.hensa.ac.uk	
+87	163.205.154.11	
+86	n1142702.ksc.nasa.gov	
+84	n1031729.ksc.nasa.gov	
+84	163.205.16.100	
+82	n1031701.ksc.nasa.gov	
+79	n1123724.ksc.nasa.gov	
+79	n1123209.ksc.nasa.gov	
+79	n1121793.ksc.nasa.gov	
+77	piweba1y.prodigy.com	
+76	n167331.ksc.nasa.gov	
+75	n1031727.ksc.nasa.gov	
+73	128.217.61.15	
+71	n1144636.ksc.nasa.gov	
+71	n1032026.ksc.nasa.gov	
+71	bensmtp.ksc.nasa.gov	
+70	n1031857.ksc.nasa.gov	
+70	163.206.140.4	
+70	163.205.23.71	
+70	128.159.135.73	
+69	news.ti.com	
+69	n1028288.ksc.nasa.gov	
+68	n1031627.ksc.nasa.gov	
+68	n1028722.ksc.nasa.gov	
+68	163.205.23.72	
+67	163.205.12.100	
+66	pl01265.ksc.nasa.gov	
+66	128.159.146.40	
+65	n167440.ksc.nasa.gov	
+65	192.77.40.4	
+65	128.159.122.14	
+64	163.205.16.90	
+64	128.217.61.98	
+64	128.159.63.159	
+63	128.159.135.38	
+62	www-proxy.crl.research.digital.com	
+62	163.205.1.19	
+61	palona1.cns.hp.com	
+61	n1032336.ksc.nasa.gov	
+60	n1123732.ksc.nasa.gov	
+58	waldtsvr.ksc.nasa.gov	
+58	n868370.ksc.nasa.gov	
+58	bocagate.bocaraton.ibm.com	
+57	163.205.162.111	
+57	128.159.168.162	
+57	128.159.121.41	
+56	n874797.ksc.nasa.gov	
+56	n1135966.ksc.nasa.gov	
+56	163.205.150.22	
+55	n1121869.ksc.nasa.gov	
+55	lahal.ksc.nasa.gov	
+55	192.112.22.119	
+55	128.159.123.58	
+54	n1121985.ksc.nasa.gov	
+54	163.205.3.38	
+The command "bash Linux_chap0x04/code/log_process.sh -e /images/MOSAIC-logosmall.gif" exited with 0.
+after_script
+0.00s$ echo "CONGURATULATIONS!"
+Done. Your build exited with 0.
+```
