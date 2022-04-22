@@ -15,7 +15,7 @@ script:
   - bash Linux_chap0x04/code/image_process.sh -r Linux_chap0x04/code/task1_img -p pre_
   - bash Linux_chap0x04/code/image_process.sh -r Linux_chap0x04/code/task1_img -s _tail
 
-  - bash Linux_chap0x04/code/image_process.sh -w Linux_chap0x04/code/task1_img SECURITY
+  #- bash Linux_chap0x04/code/image_process.sh -w Linux_chap0x04/code/task1_img SECURITY
   - bash Linux_chap0x04/code/image_process.sh -t Linux_chap0x04/code/task1_img
 
   - echo "!!!!!!!!!!!!!!!!! data_anaylyze !!!!!!!!!!!!!!!!!!!!!!! "
