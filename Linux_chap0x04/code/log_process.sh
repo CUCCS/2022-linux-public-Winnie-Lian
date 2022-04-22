@@ -12,9 +12,11 @@ function help {
     echo "-e [url]                                                      get the TOP100 host of the specific url " 
    
 }
+if [[ !-e "web_log.tsv"]]; then
+    wget "https://c4pr1c3.github.io/LinuxSysAdmin/exp/chap0x04/web_log.tsv.7z"
+    7z x web_log.tsv.7z
+fi
 
-wget "https://c4pr1c3.github.io/LinuxSysAdmin/exp/chap0x04/web_log.tsv.7z"
-7z x web_log.tsv.7z
 
 File='web_log.tsv'
 function top100_host {

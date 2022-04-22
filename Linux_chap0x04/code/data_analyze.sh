@@ -13,9 +13,10 @@ function help {
    
 }
 
-wget "https://c4pr1c3.github.io/LinuxSysAdmin/exp/chap0x04/worldcupplayerinfo.tsv"
-
-File="worldcupplayerinfo.tsv"
+if [[ ! -e "worldcupplayerinfo.tsv" ]]; then
+    wget "https://c4pr1c3.github.io/LinuxSysAdmin/exp/chap0x04/worldcupplayerinfo.tsv"
+    File="worldcupplayerinfo.tsv"
+fi
 
 function age_range {
     young=${2:1}
