@@ -1,7 +1,10 @@
 language: bash
 
 before_install:
-  # - sudo apt-get update && apt-get install -y shellcheck
+  - sudo apt-get update && sudo apt install shellcheck
+  - sudo apt install imagemagick
+  - sudo apt install p7zip-full
+  - ls -l 
 
 script:
   - echo "!!!!!!!!!!!!!!!!! image_process !!!!!!!!!!!!!!!!!!!!!!! "
@@ -41,4 +44,7 @@ after_failure:
   - echo "UNFORTUNATELY!"
   - cat error.log
 
+notifications:
+  email:
+    on_success: never
 
