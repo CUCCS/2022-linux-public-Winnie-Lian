@@ -20,7 +20,7 @@ script:
 
   - echo "!!!!!!!!!!!!!!!!! data_anaylyze !!!!!!!!!!!!!!!!!!!!!!! "
   - bash Linux_chap0x04/code/data_analyze.sh 
-  # - bash Linux_chap0x04/code/data_analyze.sh -a [20:30]
+  - bash Linux_chap0x04/code/data_analyze.sh -a [20:30]
   - bash Linux_chap0x04/code/data_analyze.sh -a [40:50]
   - bash Linux_chap0x04/code/data_analyze.sh -p Defender
   - bash Linux_chap0x04/code/data_analyze.sh -l
