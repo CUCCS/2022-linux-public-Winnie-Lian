@@ -1,10 +1,11 @@
 language: bash
 
 before_install:
-  - sudo apt-get update && sudo apt install shellcheck
-  - sudo apt install imagemagick
-  - sudo apt install p7zip-full
+  # - sudo apt-get update && sudo apt install shellcheck
+  # - sudo apt install imagemagick
+  # - sudo apt install p7zip-full
   - ls -l 
+  - sudo apt install -y shellcheck p7zip-full imagemagick
 
 script:
   - echo "!!!!!!!!!!!!!!!!! image_process !!!!!!!!!!!!!!!!!!!!!!! "
