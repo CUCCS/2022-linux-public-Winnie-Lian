@@ -14,7 +14,7 @@ function help {
 }
 
 if [[ ! -f "worldcupplayerinfo.tsv" ]]; then
-    wget "https://c4pr1c3.github.io/LinuxSysAdmin/exp/chap0x04/worldcupplayerinfo.tsv"
+    wget "https://c4pr1c3.github.io/LinuxSysAdmin/exp/chap0x04/worldcupplayerinfo.tsv";
 fi
 File="worldcupplayerinfo.tsv"
 function age_range {
