@@ -1,0 +1,52 @@
+language: bash
+
+before_install:
+  - sudo apt-get update 
+  # && sudo apt install shellcheck
+  # - sudo apt install imagemagick
+  # - sudo apt install p7zip-full
+  - ls -l 
+  - sudo apt install -y shellcheck p7zip-full imagemagick
+
+script:
+  - echo "!!!!!!!!!!!!!!!!! image_process !!!!!!!!!!!!!!!!!!!!!!! "
+  - bash Linux_chap0x04/code/image_process.sh 
+  - bash Linux_chap0x04/code/image_process.sh -h
+  - bash Linux_chap0x04/code/image_process.sh -c Linux_chap0x04/code/task1_img/0.jpeg 
+  - bash Linux_chap0x04/code/image_process.sh -co Linux_chap0x04/code/task1_img/1.jpeg
+  - bash Linux_chap0x04/code/image_process.sh -r Linux_chap0x04/code/task1_img -p pre_
+  - bash Linux_chap0x04/code/image_process.sh -r Linux_chap0x04/code/task1_img -s _tail
+
+  #- bash Linux_chap0x04/code/image_process.sh -w Linux_chap0x04/code/task1_img SECURITY
+  - bash Linux_chap0x04/code/image_process.sh -t Linux_chap0x04/code/task1_img
+
+  - echo "!!!!!!!!!!!!!!!!! data_anaylyze !!!!!!!!!!!!!!!!!!!!!!! "
+  - bash Linux_chap0x04/code/data_analyze.sh 
+  - bash Linux_chap0x04/code/data_analyze.sh -a [20:30]
+  - bash Linux_chap0x04/code/data_analyze.sh -a [40:50]
+  - bash Linux_chap0x04/code/data_analyze.sh -p Defender
+  - bash Linux_chap0x04/code/data_analyze.sh -l
+  - bash Linux_chap0x04/code/data_analyze.sh -s
+  - bash Linux_chap0x04/code/data_analyze.sh -e
+  - bash Linux_chap0x04/code/data_analyze.sh -y
+
+  - echo "!!!!!!!!!!!!!!!!! log_process !!!!!!!!!!!!!!!!!!!!!!! "
+  - bash Linux_chap0x04/code/log_process.sh
+  - bash Linux_chap0x04/code/log_process.sh -a
+  - bash Linux_chap0x04/code/log_process.sh -p
+  - bash Linux_chap0x04/code/log_process.sh -l
+  - bash Linux_chap0x04/code/log_process.sh -s
+  - bash Linux_chap0x04/code/log_process.sh -y
+  - bash Linux_chap0x04/code/log_process.sh -e /images/MOSAIC-logosmall.gif
+
+after_script:
+  - echo "CONGURATULATIONS!"
+
+after_failure:
+  - echo "UNFORTUNATELY!"
+  - cat error.log
+
+notifications:
+  email:
+    on_success: never
+
